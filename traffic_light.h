@@ -1,0 +1,26 @@
+// traffic_light.h
+#ifndef TRAFFIC_LIGHT_H
+#define TRAFFIC_LIGHT_H
+
+#include <QWidget>
+
+class QRadioButton;
+
+class TrafficLight: public QWidget{
+  Q_OBJECT
+
+public:
+  TrafficLight(QWidget * parent = nullptr);
+
+public slots:
+  void light_update();
+
+private:
+  QRadioButton * redlight;
+  QRadioButton * yellowlight;
+  QRadioButton * greenlight;
+
+  int currentState=0; //0=red, 1=green, 2=yellow
+};
+
+#endif
